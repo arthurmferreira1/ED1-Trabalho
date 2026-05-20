@@ -1,5 +1,6 @@
 all: compilar
 
+
 compilar: pilha.o main.o comodos.o
 	gcc pilha.o main.o comodos.o -o compilado
 

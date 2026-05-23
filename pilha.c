@@ -12,7 +12,6 @@ ListaGen *ExcluiGen(ListaGen*L,void (*cb)(void*)){
 ListaGen* CriaNOGen(ListaGen*L,void*info){
     ListaGen*novo=(ListaGen*)calloc(1,sizeof(ListaGen));
     if(novo==NULL){
-        printf("Erro de alocacao!\n");
         exit(1);
     }
     novo->prox=L;

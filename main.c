@@ -5,12 +5,8 @@ int main(){
     posicao *novo;
     int i,j;
     ListaGen *L=NULL;
-    FILE*arquivo=fopen("input.txt","r");
-    if(arquivo==NULL){
-        printf("ERRO ao abrir!\n");
-        exit(1);
-    }
-    fscanf(arquivo,"%d %d",&m,&n);
+
+    scanf("%d %d",&m,&n);
 
     mapa **mat = (mapa**)malloc(m * sizeof(mapa*));
     if(mat==NULL){ printf("Erro de alocacao!\n"); exit(1); }
@@ -23,14 +19,13 @@ int main(){
         for(j=0;j<n;j++){
             mat[i][j].vis=0;
             do{
-                if(fscanf(arquivo,"%c",&mat[i][j].simb)==0){
+                if(scanf("%c",&mat[i][j].simb)==0){
                     printf("Tamanho Insuficiente!\n");
                     exit(1);
                 }
             }while(mat[i][j].simb!='.' && mat[i][j].simb!='#');
         }
     }
-    fclose(arquivo);
 
     for(i=0;i<m;i++){
         for(j=0;j<n;j++){

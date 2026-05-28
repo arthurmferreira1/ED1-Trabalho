@@ -3,7 +3,6 @@
 posicao * CriaPos(int l,int c){
     posicao*novo=(posicao*)malloc(sizeof(posicao));
     if(novo==NULL){
-        printf("Erro de alocacao!\n");
         exit(1);
     }
     novo->l=l;
